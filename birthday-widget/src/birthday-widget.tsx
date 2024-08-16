@@ -7,13 +7,13 @@ import { BlockAttributes } from "widget-sdk";
  * React Component
  */
 export interface BirthdayWidgetProps extends BlockAttributes {
-  enddate: number;
+  
 }
 
-
+//API Abfrage
 function fetchDataSync(apikey: string) {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', "https://neews.eew-group.com/api/users?filter=staffbase.creationType%20eq%20%22csv%22&limit=1000", false);
+  xhr.open('GET', "https://neews.eew-group.com/api/users?limit=1000&query=Erndtebr%C3%BCck", false);
   xhr.setRequestHeader("Authorization", `Basic ${apikey}`);
   xhr.send();
   if (xhr.status == 200) {
